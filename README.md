@@ -1,1 +1,2 @@
-# Tugas-UAS-Praktikum-Gis-2
+Tegar Bahari F55119082
+Andi ramadhan DJ F55118090
