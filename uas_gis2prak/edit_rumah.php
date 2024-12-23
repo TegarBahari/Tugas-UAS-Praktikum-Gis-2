@@ -7,13 +7,13 @@ session_start();
 if (isset($_POST['simpan'])) {
     $id = $_GET['id'];
     $nama = $_POST['nama'];
-    $pemilik = $_POST['pemilik'];
+    $Nim = $_POST['Nim'];
     $alamat = $_POST['alamat'];
     $fakultas = $_POST['fakultas'];
     $latitude = $_POST['latitude'];
     $longitude = $_POST['longitude'];
 
-    $query = $conn->query("UPDATE rumah SET nama='$nama', pemilik='$pemilik', alamat='$alamat', fakultas='$fakultas', latitude='$latitude', longitude='$longitude' WHERE id='$id'");
+    $query = $conn->query("UPDATE rumah SET nama='$nama', Nim='$Nim', alamat='$alamat', fakultas='$fakultas', latitude='$latitude', longitude='$longitude' WHERE id='$id'");
 
     if ($query) {
         $_SESSION['pesan'] = 'Data brhasil diubah';
@@ -57,8 +57,8 @@ if (isset($_POST['simpan'])) {
                                     <input type="text" class="form-control" name="nama" placeholder="Nama" value="<?= $row[1]; ?>" required>
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label>Pemilik</label>
-                                    <input type="text" class="form-control" name="pemilik" placeholder="Pemilik" value="<?= $row[2]; ?>"
+                                    <label>Nim</label>
+                                    <input type="text" class="form-control" name="Nim" placeholder="Nim" value="<?= $row[2]; ?>"
                                         required>
                                 </div>
                                 <div class="form-group col-md-6">

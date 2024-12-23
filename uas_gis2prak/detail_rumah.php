@@ -10,7 +10,7 @@ $row = $query->fetch_assoc();
 $nama = $row['nama'];
 $Nim = $row['Nim'];
 $alamat = $row['alamat'];
-$fakultas= $row['nama'];
+$fakultas= $row['fakultas'];
 $latitude = $row['latitude'];
 $longitude = $row['longitude'];
 ?>

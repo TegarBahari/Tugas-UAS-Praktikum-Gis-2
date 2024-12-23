@@ -24,9 +24,9 @@ session_start();
               <tr>
                 <th scope="col">No</th>
                 <th scope="col">Nama</th>
+                <th scope="col">Nim</th>
                 <th scope="col">Alamat</th>
-                <th scope="col">Pemilik</th>
-                <th scope="col">Kecamatan</th>
+                <th scope="col">fakultas</th>
                 <th scope="col">Action</th>
               </tr>
             </thead>

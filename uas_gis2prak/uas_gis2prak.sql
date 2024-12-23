@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 23 Des 2024 pada 01.48
+-- Waktu pembuatan: 23 Des 2024 pada 02.38
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -62,7 +62,7 @@ CREATE TABLE `rumah` (
   `nama` varchar(100) NOT NULL,
   `Nim` varchar(150) NOT NULL,
   `alamat` varchar(100) NOT NULL,
-  `kampus` varchar(100) NOT NULL,
+  `fakultas` varchar(100) NOT NULL,
   `latitude` varchar(100) NOT NULL,
   `longitude` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -71,9 +71,9 @@ CREATE TABLE `rumah` (
 -- Dumping data untuk tabel `rumah`
 --
 
-INSERT INTO `rumah` (`id`, `nama`, `Nim`, `alamat`, `kampus`, `latitude`, `longitude`) VALUES
-(3, 'Tegar Bahari', 'F55119082', 'Mamboro', 'Fakultas Peternakan', '-0.795565908160606', '119.87340879231267'),
-(4, 'Andi Ramadhan Dj', 'F55118090', 'Biromaru', 'Fakultas Peternakan', '-0.9526016500447902', '119.93745978149578');
+INSERT INTO `rumah` (`id`, `nama`, `Nim`, `alamat`, `fakultas`, `latitude`, `longitude`) VALUES
+(3, 'Tegar Bahari', 'F55119082', 'Mamboro', 'Fakultas Teknik', '-0.795565908160606', '119.87340879231267'),
+(4, 'Andi Ramadhan Dj', 'F55118090', 'Biromaru', 'Fakultas Teknik', '-0.9526016500447902', '119.93745978149578');
 
 --
 -- Indexes for dumped tables
@@ -105,7 +105,7 @@ ALTER TABLE `fakultas`
 -- AUTO_INCREMENT untuk tabel `rumah`
 --
 ALTER TABLE `rumah`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

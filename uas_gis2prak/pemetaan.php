@@ -64,26 +64,30 @@
 
     <?php
     include 'koneksi.php';
+
+    // Menampilkan marker rumah
     $sql = "SELECT * FROM rumah";
     $hasil = $conn->query($sql);
     if ($hasil->num_rows > 0) {
         while ($row = $hasil->fetch_row()) { ?>
-            L.marker([<?= $row[5] ?>, <?= $row[6] ?>]).bindPopup('Nama : <?= $row[1] ?> <br> Alamat : <?= $row[3] ?> <br>' +
+            L.marker([<?= $row[5] ?>, <?= $row[6] ?>]).bindPopup('Nama : <?= $row[1] ?> <br> Nim : <?= $row[2] ?> <br>' +
                 "<a href='detail_rumah.php?id=<?= $row[0] ?>' class='btn btn-outline-info btn-sm'>Detail</a>").addTo(map);
     <?php }
     }
-    ?>
-    <?php
+
+    // Menampilkan polygon fakultas dengan informasi popup
     $sql = "SELECT * FROM fakultas";
     $hasil = $conn->query($sql);
     if ($hasil->num_rows > 0) {
         while ($row = $hasil->fetch_assoc()) { ?>
             var drawnItems = L.geoJson(<?= $row['poligon'] ?>, {
                 color: "<?= $row['warna'] ?>"
-            }).addTo(map);
+            }).bindPopup("<strong>Nama:</strong> <?= $row['nama'] ?>").addTo(map);
     <?php }
     }
     ?>
+
+    // Event untuk menampilkan rute menggunakan Leaflet Routing Machine
     $('#rute').on('click', function() {
         let awal = $('#lokasi_awal').val();
         let awalLatLng = awal.split(',')
@@ -97,6 +101,6 @@
             ],
             routeWhileDragging: false
         }).addTo(map);
-    })
+    });
 </script>
 <?php include('template/footer.php') ?>
